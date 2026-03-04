@@ -51,6 +51,7 @@ Road accidents are influenced by multiple factors such as:
 - ![boxplot](https://github.com/user-attachments/assets/892f4770-db2d-48c6-b65e-9539c82091e5)
 
 - ![boxplot years driven](https://github.com/user-attachments/assets/db3700ce-cac7-46ee-9cc2-d8d6491dfd3b)
+- 
 When drawing the boxplot for accidents based on years driven, the expectation was the lower the experience level the higher the accident count.
 
 3) Data Preprocessing
@@ -61,16 +62,23 @@ When drawing the boxplot for accidents based on years driven, the expectation wa
 
 4) Pivot table
 - A pivot table is a bar plot of the sorted values of a particular feature based on the mean. Which road conditions lead to road accidents
+- 
  ![pivot table road condition](https://github.com/user-attachments/assets/318ed3de-b065-43bc-9a43-dcbf75f1e884)
+
 Fair to bad roads have a higher chance of causing accidents
 
 - are accidents more prone based on the weather.
+- 
 ![wether pivot table](https://github.com/user-attachments/assets/82f44a68-fb38-43be-be5e-bca3ea50c9a5)
+
 The rainy season bar has a higher count thus indicating it as a major cause of accidents.
+
 - Are accidents more prone based on the sign visibility?
+- 
 ![sign visibility](https://github.com/user-attachments/assets/0832f82f-1b2b-4e6e-99fa-fc64294d6763)
 
 -This is a mapbox of the accident frequency based on the counties
+
 ![county mapbox](https://github.com/user-attachments/assets/fce7ed7a-1efa-4e7e-80b8-57d30042b41c)
 
 
@@ -81,10 +89,10 @@ The rainy season bar has a higher count thus indicating it as a major cause of a
 - Accuracy Score: the training accuracy was 70% and the test accuracy was 70% which is fair.
 
 8) Confusion Matrix
+   
 ![confusion matrix](https://github.com/user-attachments/assets/ba7c2952-2888-436c-8216-25abc84bd41b)
-This matrix is a reminder of how imbalanced our data is, and why acccuracy isn't always the best metric for judging whether or not a model is giving us what we want. 90% of all the observations said they had never seen an accident, all the model has to do is always predict accident: False and it will be 90% correct, but this output is dangerous. it never predicts class 1(accident). Accuracy = (TN + Tp)/ Total
-= (142+0)/(142+61)
-= 70%
+
+This matrix is a reminder of how imbalanced our data is, and why acccuracy isn't always the best metric for judging whether or not a model is giving us what we want. 90% of all the observations said they had never seen an accident, all the model has to do is always predict accident: False and it will be 90% correct, but this output is dangerous. it never predicts class 1(accident). Accuracy = 70%
 the recall for accidents is 0%. This model fails completely at detecting accidents. After noticing this major flaw in the model design, the model was rebalanced and the new confusion matrix is illustrated below:
 ![after prediction confusion matrix](https://github.com/user-attachments/assets/ced666c5-bc3f-4cb0-9a20-b52d2dba94d0)
 
